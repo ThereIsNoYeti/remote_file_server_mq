@@ -1,0 +1,5 @@
+VariantDir('build', 'src', duplicate=0)
+env = Environment()
+generate_certs  = env.SharedLibrary('build/_tmq_generate', ['build/tmq_generate_certs.c', 'build/fmq_client.c', 'build/fmq_msg.c', 'build/fmq_server.c'], LIBS=['sodium', 'zmq', 'czmq', 'lua5.2'])
+server          = env.SharedLibrary('build/_tmq_server',    ['build/tmq_server.c',         'build/fmq_client.c', 'build/fmq_msg.c', 'build/fmq_server.c'], LIBS=['sodium', 'zmq', 'czmq', 'lua5.2'])
+client          = env.SharedLibrary('build/_tmq_client',    ['build/tmq_client.c',         'build/fmq_client.c', 'build/fmq_msg.c', 'build/fmq_server.c'], LIBS=['sodium', 'zmq', 'czmq', 'lua5.2'])

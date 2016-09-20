@@ -1,0 +1,9 @@
+#Jetbrains IDE
+.idea
+*.iml
+
+build/
+
+.sconsign.dblite
+
+certificates/*
